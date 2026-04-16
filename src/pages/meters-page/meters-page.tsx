@@ -5,10 +5,10 @@ import { formatDate } from '../../shared/lib/format-date';
 import { formatAddress } from '../../shared/lib/format-address';
 import './meters-page.css';
 
-import meterColdIcon from '../../../image/cold.png'
-import meterHotIcon  from '../../../image/hot.png'
-import meterWarmIcon  from '../../../image/warm.png'
-import meterElectricIcon  from '../../../image/electric.png'
+import meterColdIcon from '../../../image/cold.svg'
+import meterHotIcon  from '../../../image/hot.svg'
+import meterWarmIcon  from '../../../image/warm.svg'
+import meterElectricIcon  from '../../../image/electric.svg'
 import deleteIcon  from '../../../image/delete.svg'
 
 const getPaginationItems = (currentPage: number, totalPages: number) => {
