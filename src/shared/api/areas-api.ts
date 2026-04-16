@@ -1,25 +1,24 @@
 import { apiClient } from './client';
 
-export type AreaDto = {
+export type RawAreaDto = {
   id: string;
-  number: number;
-  str_number: string;
-  str_number_full: string;
+  number: number | null;
+  str_number: string | null;
+  str_number_full: string | null;
   house: {
+    address: string | null;
     id: string;
-    address: string;
-  };
+    fias_addrobjs: string[];
+  } | null;
 };
 
-export type AreasResponse = {
+type AreaListResponse = {
   count: number;
   next: string | null;
   previous: string | null;
-  results: AreaDto[];
+  results: RawAreaDto[];
 };
 
-export const getAreasByIds = (ids: string[]) => {
-  const idsParam = ids.join(',');
-
-  return apiClient<AreasResponse>(`/areas/?id__in=${idsParam}`);
+export const getAreaById = (id: string) => {
+  return apiClient<AreaListResponse>(`/areas/?id=${id}`);
 };

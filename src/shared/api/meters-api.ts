@@ -25,9 +25,7 @@ type GetMetersParams = {
 };
 
 export const getMeters = ({ limit, offset }: GetMetersParams) => {
-  return apiClient<MetersResponse>(
-    `/meters/?limit=${limit}&offset=${offset}`
-  );
+  return apiClient<MetersResponse>(`/meters/?limit=${limit}&offset=${offset}`);
 };
 
 export const deleteMeter = (meterId: string) => {

@@ -1,13 +1,10 @@
-const BASE_URL = 'http://showroom.eis24.me/c300/api/v4/test';
+const BASE_URL = '/api/c300/api/v4/test';
 
 export const apiClient = async <T>(
   url: string,
   options?: RequestInit
 ): Promise<T> => {
   const response = await fetch(`${BASE_URL}${url}`, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
     ...options,
   });
 
